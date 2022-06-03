@@ -26,7 +26,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Live Demo](https://article-preview-component-o.netlify.app/)
+- Live Site URL: [Live Demo](https://faq-accordion-card-o.netlify.app/)
 
 ## My process
 
