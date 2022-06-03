@@ -1,0 +1,208 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+input,
+button,
+select,
+textarea {
+    font-family: inherit;
+}
+
+:root {
+    /* ## Colors */
+    /* ### Primary */
+    /* #### Text */
+    --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --soft-red: hsl(14, 88%, 65%);
+    /* #### Gradient */
+    /* Background gradient: */
+    --soft-violet: hsl(273, 75%, 66%);
+    --soft-blue: hsl(240, 73%, 65%);
+    /* ### Neutral */
+    /* #### Text */
+    --very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --dark-grayish-blue: hsl(240, 6%, 50%);
+    /* #### Dividers */
+    --light-grayish-blue: hsl(240, 5%, 91%);
+    /* ## Typography */
+    --body-font: 'Kumbh Sans', sans-serif;
+}
+
+body {
+    padding: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: var(--body-font);
+    font-size: 0.75rem;
+    color: var(--very-dark-grayish-blue);
+    background: linear-gradient(var(--soft-violet), var(--soft-blue));
+    position: relative;
+}
+
+.hide {
+    display: none;
+}
+
+.bold {
+    font-weight: 700;
+    color: var(--very-dark-desaturated-blue) !important;
+}
+
+
+/* switch to grid */
+
+.acc-card {
+    position: relative;
+    max-width: 900px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: var(--light-grayish-blue);
+    border-radius: 12px;
+    /* overflow-y: hidden; */
+}
+
+.bg {
+    position: absolute;
+    max-width: 470px;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url("../images/bg-pattern-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.acc-img__desktop {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-left: -32px;
+    /* background: url("../images/bg-pattern-desktop.svg"); */
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: 2rem 2rem 2rem 0;
+    flex: 1;
+    z-index: 3;
+}
+
+.acc-img__desktop::before {
+    content: " ";
+    position: absolute;
+    background: url("../images/illustration-box-desktop.svg");
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    top: 38%;
+    left: -12%
+}
+
+.acc-img__mobile {
+    display: none;
+}
+
+.acc {
+    padding: 2rem;
+    flex: 1;
+}
+
+.acc-card-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--very-dark-desaturated-blue);
+}
+
+.acc h2 {
+    margin-bottom: 0.4rem;
+    color: var(--dark-grayish-blue);
+}
+
+.acc-item {
+    margin: 0.85rem 0 0 0;
+    position: relative;
+}
+
+.acc-title__container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.acc-content {
+    transition: all .3s;
+}
+
+p::after {
+    content: " ";
+    margin-top: 1.3rem;
+    height: 0.5px;
+    background-color: rgba(37, 37, 37, 0.2);
+    display: block;
+}
+
+.acc-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0.5rem;
+    margin-top: -0.2rem;
+    padding: 0.3rem;
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.acc-icon {
+    align-self: center;
+    background-image: url("../images/icon-arrow-down.svg");
+    height: 40%;
+    width: 100%;
+    background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 740px) {
+    .acc-card-title {
+        text-align: center;
+    }
+    .acc {
+        margin-top: 7rem;
+    }
+    .acc-card {
+        position: relative;
+        max-width: 360px;
+        flex-direction: column;
+    }
+    .acc-img__desktop {
+        display: none;
+    }
+    .acc-img__mobile {
+        display: block;
+        position: absolute;
+        padding: 1rem;
+        left: 0px;
+        top: -158px;
+        width: 100%;
+        flex: 1;
+    }
+    .acc-img__mobile img {
+        width: 100%;
+    }
+    .bg {
+        overflow: hidden;
+        transform: translate(0, -45%);
+    }
+    body {
+        padding: 10rem 1rem 1rem 1rem;
+    }
+}
